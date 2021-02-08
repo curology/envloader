@@ -19,7 +19,7 @@
         }
     },
     "bin": [
-        "bin/envloader"
+        "envloader"
     ],
     "require": {
         "aws/aws-sdk-php": "^3.171",
