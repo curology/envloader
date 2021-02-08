@@ -1,6 +1,7 @@
 {
     "name": "curology/envloader",
     "description": "Loads values from AWS Parameter store and generates a .env file",
+    "license": "MIT",
     "authors": [
         {
             "name": "Olivia",
