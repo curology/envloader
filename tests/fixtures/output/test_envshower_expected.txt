@@ -1,0 +1,21 @@
+Showing variables for
+environment: "test"
+parameter prefix: "/envloader-test/"
++-----------------+-------------------+------------+
+| Variable Name   | Parameter Name    | Value      |
++-----------------+-------------------+------------+
+| EMPTY           | empty:1           | ********** |
+| EMPTY2          | empty2:1          | ********** |
+| NUMERIC         | numeric:1         | ********** |
+| SIMPLE          | simple:1          | ********** |
+| BACKSLASH       | backslash:1       | ********** |
+| NO_SUBSTITUTION | no_substitution:1 | ********** |
+| SUBSTITUTION    | substitution:1    | ********** |
+| DOUBLE_QUOTES   | double_quotes:1   | ********** |
+| SINGLE_QUOTES   | single_quotes:1   | ********** |
+| BACKTICKS       | backticks:1       | ********** |
+| SPECIAL_CHARS   | special_chars:1   | ********** |
+| NOT_SECURE      | not_secure:1      | ********** |
+| OVERRIDDEN      | overridden:1      | ********** |
+| EXTRA           | -                 | ********** |
++-----------------+-------------------+------------+

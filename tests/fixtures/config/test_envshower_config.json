@@ -1,0 +1,24 @@
+{
+    "awsProfile": "envloader-test",
+    "awsRegion": "us-east-1",
+    "environment": "test",
+    "envPath": "tests/fixtures/env/.env",
+    "envOverridePath": "tests/fixtures/env/.env.override",
+    "parameterPrefix": "/envloader-test/",
+    "parameterList": [
+        "overridden:1",
+        "empty:1",
+        "empty2:1",
+        "numeric:1",
+        "simple:1",
+        "backslash:1",
+        "no_substitution:1",
+        "substitution:1",
+        "double_quotes:1",
+        "single_quotes:1",
+        "backticks:1",
+        "special_chars:1",
+        "not_secure:1"
+    ]
+}
+

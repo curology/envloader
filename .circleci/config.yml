@@ -1,0 +1,45 @@
+version: 2
+
+aliases:
+    - &apt-install
+        run:
+            name: Install apt Dependencies
+            command: |
+                sudo apt update
+                sudo docker-php-ext-install zip
+    - &cache-restore
+        - restore_cache:
+            keys:
+                - v1-dependencies-{{ checksum "composer.json" }}
+                # fallback to using the latest cache if no exact match is found
+                - v1-dependencies-
+    - &cache-save
+        - save_cache:
+            key: v1-dependencies-{{ checksum "composer.json" }}
+            paths:
+                - ./vendor
+    - &composer-install
+        run:
+            name: Install Composer Dependencies
+            command: composer install --no-interaction --prefer-dist
+
+jobs:
+    build:
+        docker:
+            - image: circleci/php:7.4.7
+
+        steps:
+            - checkout
+            - <<: *apt-install
+            - <<: *cache-restore
+            - <<: *cache-save
+            - <<: *composer-install
+            - run: 
+                name: Run Lint
+                command: vendor/bin/php-cs-fixer fix --dry-run --verbose
+            - run:
+                name: Run Unit Tests
+                command: vendor/bin/phpunit tests/Unit
+            - run:
+                name: Run Command Tests
+                command: vendor/bin/phpunit tests/Command

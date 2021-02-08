@@ -1,0 +1,15 @@
+{
+    "Version": "2012-10-17",
+    "Statement": {
+        "Effect": "Allow",
+        "Action": [
+            "ssm:DeleteParameters",
+            "ssm:GetParameters",
+            "ssm:PutParameter"
+        ],
+        "Resource": [
+            "arn:aws:ssm:REGION:ACCOUNT_ID:parameter/envloader-test/*",
+            "arn:aws:ssm:REGION:ACCOUNT_ID:parameter/envloader-test"
+        ]
+    }
+}

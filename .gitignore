@@ -1,0 +1,9 @@
+composer.lock
+/vendor/
+tests/artifacts/*
+!**.gitkeep
+.env*
+!tests/fixtures/env/.env*
+.php_cs.cache
+**.swo
+**.swp

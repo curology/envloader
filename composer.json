@@ -1,0 +1,43 @@
+{
+    "name": "curology/envloader",
+    "description": "Loads values from AWS Parameter store and generates a .env file",
+    "authors": [
+        {
+            "name": "Olivia",
+            "email": "olivia.kim@curology.com"
+        }
+    ],
+     "autoload": {
+        "psr-4": {
+            "Curology\\EnvLoader\\": "src/"
+        }
+    },
+     "autoload-dev": {
+        "psr-4": {
+            "Curology\\EnvLoader\\Tests\\": "tests/"
+        }
+    },
+    "bin": [
+        "bin/envloader"
+    ],
+    "require": {
+        "aws/aws-sdk-php": "^3.171",
+        "vlucas/phpdotenv": "^4.0",
+        "php": "^7.4",
+        "symfony/console": "^5.2"
+    },
+    "require-dev": {
+        "friendsofphp/php-cs-fixer": "^2.17",
+        "phpunit/phpunit": "^9.5"
+    },
+    "scripts": {
+        "lint": "vendor/bin/php-cs-fixer fix .",
+        "test": "vendor/bin/phpunit tests",
+        "test-unit": "vendor/bin/phpunit tests/Unit",
+        "test-command": "vendor/bin/phpunit tests/Command",
+        "clean": [
+            "find tests/artifacts -maxdepth 1 -not -path tests/artifacts -not -name '.gitkeep' -print0 | xargs -0 rm -rf",
+            "rm -rf .php_cs.cache"
+        ]
+    }
+}

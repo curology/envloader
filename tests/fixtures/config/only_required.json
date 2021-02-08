@@ -1,0 +1,4 @@
+{
+    "awsRegion": "us-east-1",
+    "parameterList": ["param1:1", "param2:2"]
+}
