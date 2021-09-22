@@ -23,7 +23,7 @@
     ],
     "require": {
         "aws/aws-sdk-php": "^3.171",
-        "vlucas/phpdotenv": "^4.0",
+        "vlucas/phpdotenv": "^5.2",
         "php": "^8.0",
         "symfony/console": "^5.2"
     },

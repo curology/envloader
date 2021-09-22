@@ -21,11 +21,11 @@ class DotenvRepository implements RepositoryInterface
 
     public function load(): array
     {
-        $adapter = new ArrayAdapter();
+        $adapter = ArrayAdapter::create()->get();
 
-        $repo = RepositoryBuilder::create()
-            ->withReaders([$adapter])
-            ->withWriters([$adapter])
+        $repo = RepositoryBuilder::createWithNoAdapters()
+            ->addWriter($adapter)
+            ->addReader($adapter)
             ->immutable()
             ->make()
         ;
